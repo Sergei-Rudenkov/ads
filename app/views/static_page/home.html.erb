@@ -1,5 +1,6 @@
 <div class="center hero-unit">
   <h1>Welcome to ADS</h1>
-
+<% if !signed_in? %> 
   <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+  <% end %>
 </div>
