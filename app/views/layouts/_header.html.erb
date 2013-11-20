@@ -4,7 +4,7 @@
       <%= link_to "ADS", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Объявления",    '#' %></li>
+          <li><%= link_to "Объявления", adverts_path %></li>
           <% if signed_in? %>
             <li><%= link_to "Users", users_path %></li>
             <li id="fat-menu" class="dropdown">

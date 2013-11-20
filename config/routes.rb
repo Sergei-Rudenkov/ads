@@ -1,4 +1,5 @@
 Ads::Application.routes.draw do
+ resources :adverts
  resources :users
  resources :sessions, only: [:new, :create, :destroy]
  root to:  "static_page#home"
