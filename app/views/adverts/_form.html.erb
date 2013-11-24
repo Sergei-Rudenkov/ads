@@ -10,7 +10,10 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="field">
+    <%= f.label :unit %><br />
+    <%= f.text_field :unit %>
+  </div>
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
@@ -24,12 +27,16 @@
     <%= f.text_area :content %>
   </div>
   <div class="field">
-    <%= f.label :draft %><br />
+    <%= f.label :draft %>
     <%= f.check_box :draft %>
   </div>
   <div class="field">
-    <%= f.label :archive %><br />
+    <%= f.label :archive %> 
     <%= f.check_box :archive %>
+  </div>
+  <div class="field">
+    <%= f.label :admin_ads %>
+    <%= f.check_box :admin_ads %>
   </div>
   <div class="actions">
     <%= f.submit %>

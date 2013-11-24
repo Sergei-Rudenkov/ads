@@ -1,4 +1,6 @@
 class AdvertsController < ApplicationController
+   before_filter :admin_user,     only: [:destroy, :edit, :update]
+  before_filter :signed_in_user, only: [:new, :edit, :update, :create]
   # GET /adverts
   # GET /adverts.json
   def index
@@ -80,4 +82,12 @@ class AdvertsController < ApplicationController
       format.json { head :no_content }
     end
   end
+   private
+
+    def signed_in_user
+      redirect_to signin_url, notice: "Please sign in." unless signed_in?
+    end
+    def admin_user
+      redirect_to(root_path) unless current_user.admin?
+    end
 end

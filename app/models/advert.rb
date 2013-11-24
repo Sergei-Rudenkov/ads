@@ -15,7 +15,7 @@
 #
 
 class Advert < ActiveRecord::Base
-  attr_accessible :archive, :content, :description, :draft, :title
+  attr_accessible :archive, :content, :description, :draft, :title, :unit, :admin_ads
   validates :description, presence: true, length: { maximum: 350 }
   validates :content, presence: true
   validates :title, presence: true, length: { maximum: 50 }

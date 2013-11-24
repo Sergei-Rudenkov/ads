@@ -1,30 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
+<h1>
   <%= @advert.title %>
-</p>
+</h1>
 
 <p>
-  <b>Description:</b>
-  <%= @advert.description %>
+  <%= markdown(@advert.content) %>
 </p>
 
-<p>
-  <b>Content:</b>
-  <%= @advert.content %>
-</p>
-
-<p>
-  <b>Draft:</b>
-  <%= @advert.draft %>
-</p>
-
-<p>
-  <b>Archive:</b>
-  <%= @advert.archive %>
-</p>
-
-
-<%= link_to 'Edit', edit_advert_path(@advert) %> |
-<%= link_to 'Back', adverts_path %>
+ <% if current_user && current_user.admin? %>
+<%= link_to 'Править', edit_advert_path(@advert) %> 
+<% end %>
